@@ -1,4 +1,4 @@
-qtwebsockets-opensource-src (5.9.1-3) unstable; urgency=medium
+qtwebsockets-opensource-src (5.9.1+ubports) xenial; urgency=medium
 
   * Release to unstable.
 

@@ -1,0 +1,113 @@
+Source: qtwebsockets-opensource-src
+Section: libs
+Priority: optional
+Maintainer: Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>
+Uploaders: Sune Vuorela <debian@pusling.com>,
+           Pino Toscano <pino@debian.org>,
+           Lisandro Damián Nicanor Pérez Meyer <lisandro@debian.org>,
+           Timo Jyrinki <timo@debian.org>,
+           Dmitry Shachnev <mitya57@debian.org>,
+           Simon Quigley <tsimonq2@ubuntu.com>
+Build-Depends: debhelper (>= 9.20160114~),
+               libssl1.0-dev,
+               pkg-kde-tools,
+               qml-module-qtquick2,
+               qml-module-qttest,
+               qtbase5-private-dev (>= 5.9.1+dfsg~),
+               qtdeclarative5-dev (>= 5.9.1~),
+               qtdeclarative5-private-dev (>= 5.9.1~),
+               xauth,
+               xvfb
+Build-Depends-Indep: libqt5sql5-sqlite (>= 5.9.1+dfsg~),
+                     qtbase5-doc-html (>= 5.9.1+dfsg~),
+                     qttools5-dev-tools (>= 5.9.1~)
+Standards-Version: 4.0.0
+Homepage: https://qt.io/
+Vcs-Git: https://anonscm.debian.org/git/pkg-kde/qt/qtwebsockets.git
+Vcs-Browser: https://anonscm.debian.org/cgit/pkg-kde/qt/qtwebsockets.git
+
+Package: libqt5websockets5
+Architecture: any
+Multi-Arch: same
+Pre-Depends: ${misc:Pre-Depends}
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: Qt 5 Web Sockets module
+ Qt is a cross-platform C++ application framework. Qt's primary feature
+ is its rich set of widgets that provide standard GUI functionality.
+ .
+ This package contains a Qt library that implements WebSockets, both
+ client and server.
+
+Package: libqt5websockets5-dev
+Architecture: any
+Multi-Arch: same
+Section: libdevel
+Depends: libqt5websockets5 (= ${binary:Version}), qtbase5-dev, ${misc:Depends}
+Description: Qt 5 Web Sockets module - development files
+ Qt is a cross-platform C++ application framework. Qt's primary feature
+ is its rich set of widgets that provide standard GUI functionality.
+ .
+ This package contains the development files needed to build Qt applications
+ using Qt 5 Web Sockets library.
+
+Package: qml-module-qtwebsockets
+Architecture: any
+Multi-Arch: same
+Pre-Depends: ${misc:Pre-Depends}
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: Qt 5 Web Sockets QML module
+ Qt is a cross-platform C++ application framework. Qt's primary feature
+ is its rich set of widgets that provide standard GUI functionality.
+ .
+ This package contains the Qt Web Sockets QML module.
+
+Package: qml-module-qt-websockets
+Architecture: any
+Multi-Arch: same
+Section: oldlibs
+Pre-Depends: ${misc:Pre-Depends}
+Depends: qml-module-qtwebsockets, ${misc:Depends}
+Description: Qt 5 Web Sockets compatibility QML module
+ Qt is a cross-platform C++ application framework. Qt's primary feature
+ is its rich set of widgets that provide standard GUI functionality.
+ .
+ This package contains the compatibility Qt.WebSockets QML module. Do
+ not use it, use QtWebSockets module instead (in qml-module-qtwebsockets
+ package).
+
+Package: qtwebsockets5-examples
+Architecture: any
+Multi-Arch: same
+Section: doc
+Pre-Depends: ${misc:Pre-Depends}
+Depends: qml-module-qtquick2,
+         qml-module-qtwebsockets,
+         ${misc:Depends},
+         ${shlibs:Depends}
+Description: Examples for Qt 5 Web Sockets module
+ Qt is a cross-platform C++ application framework. Qt's primary feature
+ is its rich set of widgets that provide standard GUI functionality.
+ .
+ This package contains examples for the Qt 5 Web Sockets library.
+
+Package: qtwebsockets5-doc
+Architecture: all
+Section: doc
+Depends: ${misc:Depends}
+Description: Qt 5 Web Sockets documentation
+ Qt is a cross-platform C++ application framework. Qt's primary feature
+ is its rich set of widgets that provide standard GUI functionality.
+ .
+ This package contains the documentation for the Qt 5 Web Sockets
+ library.
+
+Package: qtwebsockets5-doc-html
+Architecture: all
+Section: doc
+Depends: ${misc:Depends}
+Description: Qt 5 Web Sockets HTML documentation
+ Qt is a cross-platform C++ application framework. Qt's primary feature
+ is its rich set of widgets that provide standard GUI functionality.
+ .
+ This package contains the HTML documentation for the Qt 5 Web Sockets
+ library.

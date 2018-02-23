@@ -1,27 +1,28 @@
 Source: qtwebsockets-opensource-src
 Section: libs
 Priority: optional
-Maintainer: Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+XSBC-Original-Maintainer: Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>
 Uploaders: Sune Vuorela <debian@pusling.com>,
            Pino Toscano <pino@debian.org>,
-           Lisandro Damian Nicanor Perez Meyer <lisandro@debian.org>,
+           Lisandro Damián Nicanor Pérez Meyer <lisandro@debian.org>,
            Timo Jyrinki <timo@debian.org>,
            Dmitry Shachnev <mitya57@debian.org>,
            Simon Quigley <tsimonq2@ubuntu.com>
-Build-Depends: debhelper (>= 9.20160114~),
-               libssl-dev,
+Build-Depends: debhelper (>= 9),
+               libssl1.0-dev,
                pkg-kde-tools,
                qml-module-qtquick2,
                qml-module-qttest,
-               qtbase5-private-dev (>= 5.9.1+dfsg~),
-               qtdeclarative5-dev (>= 5.9.1~),
-               qtdeclarative5-private-dev (>= 5.9.1~),
+               qtbase5-private-dev (>= 5.9.3+dfsg~),
+               qtdeclarative5-dev (>= 5.9.3~),
+               qtdeclarative5-private-dev (>= 5.9.3~),
                xauth,
                xvfb
-Build-Depends-Indep: libqt5sql5-sqlite (>= 5.9.1+dfsg~),
-                     qtbase5-doc-html (>= 5.6.0~),
-                     qttools5-dev-tools (>= 5.9.1~)
-Standards-Version: 4.0.0
+Build-Depends-Indep: libqt5sql5-sqlite (>= 5.9.0+dfsg~),
+                     qtbase5-doc-html (>= 5.9.0+dfsg~),
+                     qttools5-dev-tools (>= 5.9.0~)
+Standards-Version: 4.1.1
 Homepage: https://qt.io/
 Vcs-Git: https://anonscm.debian.org/git/pkg-kde/qt/qtwebsockets.git
 Vcs-Browser: https://anonscm.debian.org/cgit/pkg-kde/qt/qtwebsockets.git

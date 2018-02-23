@@ -12,7 +12,7 @@ export LDFLAGS := $(shell dpkg-buildflags --get LDFLAGS) -Wl,--as-needed
 export QT_SELECT := qt5
 
 %:
-	dh $@ --parallel --with pkgkde_symbolshelper
+	dh $@ --with pkgkde_symbolshelper
 
 override_dh_auto_clean:
 	dh_auto_clean
@@ -39,8 +39,9 @@ override_dh_auto_test-arch:
 	$(MAKE) install -Csrc/imports INSTALL_ROOT=$(CURDIR)/test_root
 # armhf: illegal instruction, not reproducible on porterbox. See also #860507.
 # mips: related to llvmpipe. Reported as #868745.
+# mips64el: UNREACHABLE executed at .../llvm-toolchain-5.0-5.0/lib/ExecutionEngine/RuntimeDyld/Targets/RuntimeDyldELFMips.cpp:123!
 # kfreebsd-*: see https://bugreports.qt.io/browse/QTBUG-41448
-ifneq (,$(filter $(DEB_HOST_ARCH),armhf mips kfreebsd-amd64 kfreebsd-i386))
+ifneq (,$(filter $(DEB_HOST_ARCH),armhf mips mips64el kfreebsd-amd64 kfreebsd-i386))
 	-LD_LIBRARY_PATH=$(CURDIR)/lib QML2_IMPORT_PATH=$(CURDIR)/test_root/usr/lib/$(DEB_HOST_MULTIARCH)/qt5/qml \
 		xvfb-run -a -s "-screen 0 1024x768x24 +extension RANDR +extension RENDER +extension GLX" \
 		dh_auto_test --max-parallel=1 -- -Ctests/auto
@@ -56,8 +57,8 @@ override_dh_auto_test-indep:
 override_dh_auto_install-indep:
 	make INSTALL_ROOT=$(CURDIR)/debian/tmp install_docs
 
-override_dh_install:
-	dh_install --fail-missing
+override_dh_missing:
+	dh_missing --fail-missing
 
 override_dh_strip:
 	dh_strip --dbgsym-migration='qtwebsockets5-dbg (<< 5.7.0-1~)'

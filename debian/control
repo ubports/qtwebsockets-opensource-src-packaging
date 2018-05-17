@@ -14,13 +14,11 @@ Build-Depends: debhelper (>= 9),
                pkg-kde-tools,
                qml-module-qtquick2,
                qml-module-qttest,
-               qtbase5-private-dev (>= 5.9.3+dfsg~),
-               qtdeclarative5-dev (>= 5.9.3~),
-               qtdeclarative5-private-dev (>= 5.9.3~),
+               qtbase5-private-dev (>= 5.9.5+dfsg~),
+               qtdeclarative5-dev (>= 5.9.5~),
+               qtdeclarative5-private-dev (>= 5.9.5~),
                xauth,
                xvfb
-Build-Depends-Indep: libqt5sql5-sqlite (>= 5.9.0+dfsg~),
-                     qttools5-dev-tools (>= 5.9.0~)
 Standards-Version: 4.1.1
 Homepage: https://qt.io/
 Vcs-Git: https://anonscm.debian.org/git/pkg-kde/qt/qtwebsockets.git
